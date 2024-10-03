@@ -28,7 +28,17 @@ public class NSJFScheduler implements Scheduler {
     // Task 2: Complete the implementation of Non-preemptive Shortest Job First    
     @Override
     public void addTask(Task task) {	
-	
+    	Iterator i = ready.iterator();
+    	int shortest = Integer.MAX_VALUE;
+    	int position = 0;
+    	Task nextTask = task;
+    	while(i.hasNext()) {
+    		if(task.getSize() < shortest) {
+    			shorte
+    		}
+    		position++;
+    	}
+    	ready.add(task);
     }
 
     @Override
@@ -41,7 +51,12 @@ public class NSJFScheduler implements Scheduler {
             selected.start();                 
         } else {                              
 	    // Task 2: Complete the implementation of Non-preemptive Shortest Job First
-	    
+        	if(selected.isDone()) {
+        		selected.stop();
+                selected = null;
+                
+                schedule();
+        	}
         }                                    
     }
 
