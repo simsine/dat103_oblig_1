@@ -28,7 +28,7 @@ public class NSJFScheduler implements Scheduler {
     // Task 2: Complete the implementation of Non-preemptive Shortest Job First    
     @Override
     public void addTask(Task task) {	
-	
+    	ready.add(task);
     }
 
     @Override
